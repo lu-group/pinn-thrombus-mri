@@ -5,9 +5,10 @@ Tracking the Hemodynamics in the Evolving False Lumen of Dissected Aorta. *Nexus
 
 ## Code
 
-- [Data Only Learning](data_only.py)
-- [Warm-Start PINN](WS_PINN.py)
-- [Transfer Learning Warm-Start PINN](TL_WS_PINN.py)
+- [Navier-stokes flow nets base code](code/NSFnets3D.py)
+- [Data only](code/data_only.py)
+- [Warm-start PINN](code/WS_PINN.py)
+- [Transfer learning warm-start PINN](code/TL_WS_PINN.py)
 
 ## Cite this work
 
