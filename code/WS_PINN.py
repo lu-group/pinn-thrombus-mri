@@ -101,7 +101,7 @@ print("\n\nLoading data ...\n\n")
 # load observable data
 data_fileName = data_fileDir + "observables_" + str(num_slice) + ".npz"
 data = np.load(data_fileName)["arr_0"]
-#  downdampling in time
+# downsampling in time
 times = np.arange(
     0,
     int(num_interval_total - 1),
