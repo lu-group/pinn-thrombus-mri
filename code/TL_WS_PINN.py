@@ -35,26 +35,26 @@ stretch_amount = "10"  # "10","20","30","40"
 
 if stretch_amount == "10":
     # For the aneurysm stretched 10% in the z-direction:
-    num_slice = 39  # can be selected from [7,15,23,31,39]
+    num_slice = 39  # can be selected from [8,17,25,34,43]
     old_num_slice = 39  # can be selected from [7,15,23,31,39]
-    old_newtonian_file_name = "newtonian_00"
+    old_newtonian_file_name = "newtonian"  # This is from aneurysm #1
     newtonian_file_name = "newtonian_10"
 if stretch_amount == "20":
     # For the aneurysm stretched 20% in the z-direction:
-    num_slice = 59  # can be selected from [11,23,35,47,59]
-    old_num_slice = 39  # can be selected from [7,15,23,31,39]
+    num_slice = 59  # can be selected from [9,18,28,37,47]
+    old_num_slice = 39  # can be selected from [8,17,25,34,43]
     old_newtonian_file_name = "newtonian_10"
     newtonian_file_name = "newtonian_20"
 if stretch_amount == "30":
     # For the aneurysm stretched 30% in the z-direction:
-    num_slice = 39  # can be selected from [9,18,27,36,45]
-    old_num_slice = 39  # can be selected from [7,15,23,31,39]
+    num_slice = 39  # can be selected from [10,20,30,40,51]
+    old_num_slice = 39  # can be selected from [9,18,28,37,47]
     old_newtonian_file_name = "newtonian_20"
     newtonian_file_name = "newtonian_30"
 if stretch_amount == "40":
     # For the aneurysm stretched 40% in the z-direction:
-    num_slice = 39  # can be selected from [9,18,27,36,45]
-    old_num_slice = 39  # can be selected from [7,15,23,31,39]
+    num_slice = 39  # can be selected from [11,21,32,43,54]
+    old_num_slice = 39  # can be selected from [10,20,30,40,51]
     old_newtonian_file_name = "newtonian_30"
     newtonian_file_name = "newtonian_40"
 else:
@@ -70,6 +70,9 @@ num_interval_total = 29  # fixed 29 snapshots in total - [0,29]
 # medium sized aneurysm (31 vs. 29), we only use 29 here
 
 # Where your data is located, if in the same directery leave as ""
+# You may need to go through and make sure all the required data is where it needs
+# to be for the TL case as extra data is needed and you may have to access multiple
+# folders
 data_fileDir = ""
 
 # ====================================================================
@@ -211,6 +214,7 @@ p_f_stretch = fData[:, 7:8].astype(np.float32).flatten()[:, None]
 # load boundary points
 
 # We only need the medium aneurysm points, we can stretch them manually
+# Make sure aneurysm_highres_wallpoints_only.npz is referencing aneurysm 1's data
 bData_fileName = data_fileDir + "aneurysm_highres_wallpoints_only.npz"
 bcsData = np.load(bData_fileName)["arr_0"]
 x_b = bcsData[:, 0:1].astype(np.float32).flatten()[:, None]
