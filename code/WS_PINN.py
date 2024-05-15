@@ -255,53 +255,7 @@ def data_warmup():  # This is data only
 
     print("\n")
     print("Data warm-up done ......\n")
-    # # ====================================================================
-    # # =======================  evaluation  ===============================
-    # # ====================================================================
-    u_data_pred, v_data_pred, w_data_pred, p_data_pred = predict3D(
-        model, T_star, X_star, Y_star, Z_star
-    )
-    scipy.io.savemat(
-        save_results_to
-        + "prediction_training_%s.mat" % (time.strftime("%d%m%Y_%H%M%S")),
-        {
-            "U_data_pred": u_data_pred,
-            "V_data_pred": v_data_pred,
-            "W_data_pred": w_data_pred,
-            "P_data_pred": p_data_pred,
-        },
-    )
-    del u_data_pred, v_data_pred, w_data_pred, p_data_pred
 
-    # Final Prediction results
-    u_pred, v_pred, w_pred, p_pred = predict3D(model, t_f, x_f, y_f, z_f)
-    scipy.io.savemat(
-        save_results_to
-        + "prediction_testing_%s.mat" % (time.strftime("%d%m%Y_%H%M%S")),
-        {
-            "U_pred": u_pred,
-            "V_pred": v_pred,
-            "W_pred": w_pred,
-            "P_pred": p_pred,
-            "nu_v": nu_v_log,
-            "loss": loss_log,
-            "num_layer": num_layer,
-            "num_node": num_node,
-            "batchSize": batS,
-        },
-    )
-    print("\n")
-    print("Results saved ......\n")
-
-    error_u = np.linalg.norm(u_f - u_pred, 2) / np.linalg.norm(u_f, 2)
-    error_v = np.linalg.norm(v_f - v_pred, 2) / np.linalg.norm(v_f, 2)
-    error_w = np.linalg.norm(w_f - w_pred, 2) / np.linalg.norm(w_f, 2)
-    Vpred = (u_pred**2 + v_pred**2 + w_pred**2) ** 0.5
-    Vtrue = (u_f**2 + v_f**2 + w_f**2) ** 0.5
-    error_mag = np.linalg.norm(Vtrue - Vpred, 2) / np.linalg.norm(Vtrue, 2)
-    del u_pred, v_pred, w_pred, p_pred, model
-
-    return error_u, error_v, error_w, error_mag
 
 
 # ====================================================================
@@ -398,20 +352,13 @@ if __name__ == "__main__":
 
     graph1 = tf.Graph()
     with graph1.as_default():
-        error_u_1, error_v_1, error_w_1, error_mag_1 = data_warmup()
+        data_warmup()
 
     graph2 = tf.Graph()
     with graph2.as_default():
         error_u_2, error_v_2, error_w_2, error_mag_2 = PINN()
 
     print("\n")
-
-    print(" Data warm-up: data + bcs: ")
-    print("   relative l2 error u:    %e" % (error_u_1))
-    print("   relative l2 error v:    %e" % (error_v_1))
-    print("   relative l2 error w:    %e" % (error_w_1))
-    print("   relative l2 error |V|:  %e" % (error_mag_1))
-    print("---------------------------------------\n")
 
     print(" PINN: data + bcs + equ used: ")
     print("   relative l2 error u:    %e" % (error_u_2))
