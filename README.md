@@ -1,6 +1,6 @@
 # PINN Thrombus MRI
 
-The source code and data for the artical [M. Daneker, S. Cai, Y. Qian, E. Myzelev, A. Khumbhat & L. Lu. Transfer Learning on Physics-Informed Neural Networks for
+The source code and data for the article [M. Daneker, S. Cai, Y. Qian, E. Myzelev, A. Khumbhat & L. Lu. Transfer Learning on Physics-Informed Neural Networks for
 Tracking the Hemodynamics in the Evolving False Lumen of Dissected Aorta. *Nexus*, Elsevier, page -- numbers, year](link).
 
 ## Code
