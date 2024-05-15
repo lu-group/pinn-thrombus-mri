@@ -147,36 +147,24 @@ p_f = fData[:, 7:8].astype(np.float32).flatten()[:, None]
 # ====================================================================
 # load boundary points
 bData_fileName = data_fileDir + "aneurysm_highres_wallpoints_only.npz"
-data_slip1 = np.load(bData_fileName)["arr_0"]
-data_slip = np.hstack(
-    (
-        data_slip1,
-        np.random.uniform(0, dimensionless_time, (data_slip1.shape[0], 1)),
-    )
+bcsData = np.load(bData_fileName)["arr_0"]
+x_b = bcsData[:, 0:1].astype(np.float32).flatten()[:, None]
+y_b = bcsData[:, 1:2].astype(np.float32).flatten()[:, None]
+z_b = bcsData[:, 2:3].astype(np.float32).flatten()[:, None]
+t_b = (
+    np.array(range(0, num_interval_total, 1))
+    .astype(np.float32)
+    .reshape([1, -1])
 )
+x_b = np.tile(x_b, [1, t_b.shape[1]])
+y_b = np.tile(y_b, [1, t_b.shape[1]])
+z_b = np.tile(z_b, [1, t_b.shape[1]])
+t_b = np.tile(t_b, [x_b.shape[0], 1])
+x_b = x_b.flatten()[:, None]
+y_b = y_b.flatten()[:, None]
+z_b = z_b.flatten()[:, None]
+t_b = t_b.flatten()[:, None] * dimensionless_time / num_interval_total
 
-# We only have x, y, and z datapoints so we must create our t values
-counter = 0
-while counter < 50:
-    data_slip = np.vstack(
-        (
-            data_slip,
-            np.hstack(
-                (
-                    data_slip1,
-                    np.random.uniform(
-                        0, dimensionless_time, (data_slip1.shape[0], 1)
-                    ),
-                )
-            ),
-        )
-    )
-    counter = counter + 1
-
-t_b = data_slip[:, 3].astype(np.float32).flatten()[:, None]  #
-x_b = data_slip[:, 0].astype(np.float32).flatten()[:, None]  #
-y_b = data_slip[:, 1].astype(np.float32).flatten()[:, None]  #
-z_b = data_slip[:, 2].astype(np.float32).flatten()[:, None]  #
 
 
 del data, data_slip, fData, data_slip1
