@@ -167,7 +167,7 @@ t_b = t_b.flatten()[:, None] * dimensionless_time / num_interval_total
 
 
 
-del data, data_slip, fData, data_slip1
+del data, fData, bcsData
 
 
 # ====================================================================
