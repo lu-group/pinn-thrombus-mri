@@ -5,7 +5,9 @@ Tracking the Hemodynamics in the Evolving False Lumen of Dissected Aorta. *Nexus
 
 ## Code
 
-- [Navier-stokes flow nets base code](code/NSFnets3D.py)
+The [Navier-Stokes flow nets base code](code/NSFnets3D.py) is required for all other .py files to run, make sure it is included in the same directory. 
+
+- [Navier-Stokes flow nets base code](code/NSFnets3D.py)
 - [Data only](code/data_only.py)
 - [Warm-start PINN](code/WS_PINN.py)
 - [Transfer learning warm-start PINN](code/TL_WS_PINN.py)
