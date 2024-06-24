@@ -26,7 +26,6 @@ If you use this code for academic research, you are encouraged to cite the follo
   volume    = {1},
   issue     = {2},
   year      = {2024},
-  publisher = {Elsevier},
 }
 ```
 
