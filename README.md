@@ -1,7 +1,7 @@
 # PINN Thrombus MRI
 
 The source code and data for the article [M. Daneker, S. Cai, Y. Qian, E. Myzelev, A. Khumbhat & L. Lu. Transfer Learning on Physics-Informed Neural Networks for
-Tracking the Hemodynamics in the Evolving False Lumen of Dissected Aorta. *Nexus*, Elsevier, 1(2), 2024](https://doi.org/10.1016/j.ynexs.2024.100016).
+Tracking the Hemodynamics in the Evolving False Lumen of Dissected Aorta. *Nexus*, 1(2), 2024](https://doi.org/10.1016/j.ynexs.2024.100016).
 
 ## Code
 
