@@ -13,7 +13,7 @@ The [Navier-Stokes flow nets base code](code/NSFnets3D.py) is required for all o
 
 ## Data
 
-Due to the size of the data it was uploaded to [google drive](https://drive.google.com/drive/folders/1uGT7tXtB-7PrW6YyKtV6QQU7L6ZH6H3e?usp=sharing).
+Due to the size of the data it was uploaded to [OneDrive](https://yaleedu-my.sharepoint.com/:f:/g/personal/lu_lu_yale_edu/EiXTCD4kdgxIu1MII7nqsiEBNKcd-Yt6wSbEjGynnTOgQQ).
 
 ## Cite this work
 
