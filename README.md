@@ -31,7 +31,7 @@ If you use this code for academic research, you are encouraged to cite the follo
   volume  = {1},
   issue   = {2},
   year    = {2024},
-  doi     = {https://doi.org/10.1016/j.ynexs.2024.100016},
+  doi     = {https://doi.org/10.1016/j.ynexs.2024.100016}
 }
 ```
 
