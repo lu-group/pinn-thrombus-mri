@@ -1,0 +1,4 @@
+# A list of packages used by the project
+numpy
+scipy
+tensorflow
