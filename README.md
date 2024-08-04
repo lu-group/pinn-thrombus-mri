@@ -25,13 +25,13 @@ If you use this code for academic research, you are encouraged to cite the follo
 
 ```
 @article{Daneker2024,
-  author    = {Daneker, Mitchell and Cai, Shengze and Qian, Ying and Myzelev, Eric and Khumbat, Arsh and Li, He and Lu, Lu},
-  title     = {Transfer Learning on Physics-Informed Neural Networks for Tracking the Hemodynamics in the Evolving False Lumen of Dissected Aorta},
-  journal   = {Nexus}
-  volume    = {1},
-  issue     = {2},
-  year      = {2024},
-  doi       = {https://doi.org/10.1016/j.ynexs.2024.100016},
+  author  = {Daneker, Mitchell and Cai, Shengze and Qian, Ying and Myzelev, Eric and Khumbat, Arsh and Li, He and Lu, Lu},
+  title   = {Transfer Learning on Physics-Informed Neural Networks for Tracking the Hemodynamics in the Evolving False Lumen of Dissected Aorta},
+  journal = {Nexus}
+  volume  = {1},
+  issue   = {2},
+  year    = {2024},
+  doi     = {https://doi.org/10.1016/j.ynexs.2024.100016},
 }
 ```
 
