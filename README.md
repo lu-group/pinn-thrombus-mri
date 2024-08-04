@@ -1,5 +1,3 @@
-> Under Construction
-
 # Transfer learning on PINNs for tracking hemodynamics
 
 The source code and data for the article [M. Daneker, S. Cai, Y. Qian, E. Myzelev, A. Khumbhat & L. Lu. Transfer Learning on Physics-Informed Neural Networks for
